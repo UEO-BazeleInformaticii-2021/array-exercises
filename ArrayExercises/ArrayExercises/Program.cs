@@ -7,7 +7,45 @@ namespace ArrayExercises
         static void Main(string[] args)
         {
             int[] array = ReadArray();
-            PrintArray(array);
+            int[] sortedArray = BubbleSort(array);
+            PrintArray(sortedArray);
+        }
+
+        static int[] BubbleSort(int[] array)
+        {
+            // 5 3 2 0 100
+            // 3 5 2 0 100
+            // 3 2 5 0 100
+            // 2 3 5 0 100
+
+            // incepem de la primul element
+            // incepem si iteram array-ul
+
+            // Cazul: sortare ascendenta
+            // la fiecare pas testam: elementul curent < elementul urmator?
+            //      DA => all good, pot merge mai departe
+            //      NU => interschimbam elementul curent cu elementul urmator
+            //            o iau inapoi de la capat
+
+            bool hasChanges = true;
+            do
+            {
+                // bucla de repetari
+                for (int i = 0; i < array.Length - 1;i++)
+                {
+                    hasChanges = array[i] > array[i + 1];
+                    if (hasChanges)
+                    {
+                        int aux = array[i];
+                        array[i] = array[i + 1];
+                        array[i + 1] = aux;
+                        break;
+                    }
+                }
+            }
+            while (hasChanges);
+
+            return array;
         }
 
         static int Min(int[] array)
