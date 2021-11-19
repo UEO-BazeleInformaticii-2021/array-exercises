@@ -7,7 +7,7 @@ namespace ArrayExercises
         static void Main(string[] args)
         {
             int[] array = ReadArray();
-            int[] sortedArray = BubbleSort(array);
+            int[] sortedArray = SelectionSort(array);
             PrintArray(sortedArray);
         }
 
@@ -44,6 +44,35 @@ namespace ArrayExercises
                 }
             }
             while (hasChanges);
+
+            return array;
+        }
+
+        static int[] SelectionSort(int[] array)
+        {
+            // 5 3 2 0 100
+            // Cazul: sortare ascendenta
+
+            // 0 5 3 2 100
+
+            // pornesc o iterare incepand de la primul element => capat
+            // la fiecare pas, incerc sa aduc pe pozitia curenta minimul din sub-vectorul care ramane pana la capat
+
+            for (int i = 0; i < array.Length - 1; i++) // pozitia curenta pe care aduc minimul
+            {
+
+                for (int j = i + 1; j < array.Length; j++) 
+                    // trebuie sa iterez sub-vectorul care incepe de la elementul urmator pozitiei curente
+                    // si merge pana la capatul vectorului
+                {
+                    if (array[i] > array[j])
+                    {
+                        int aux = array[i];
+                        array[i] = array[j];
+                        array[j] = aux;
+                    }
+                }
+            }
 
             return array;
         }
