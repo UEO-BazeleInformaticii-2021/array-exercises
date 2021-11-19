@@ -10,6 +10,30 @@ namespace ArrayExercises
             PrintArray(array);
         }
 
+        static int Min(int[] array)
+        {
+            if ((array is null) || (array.Length == 0))
+            {
+                return int.MinValue;
+            }
+
+            // 1. alegem ca si minim primul element din vector
+            int min = array[0];
+
+            // 2. iteram vectorul si la fiecare pas testam elementul curent cu minimul curent
+            //     a) elementul curent < minimul => noul minim = elementul curent
+            //     b) elementul curent > minimul => all good, merg mai departe
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] < min)
+                {
+                    min = array[i];
+                }
+            }
+
+            return min;
+        }
+
         static void PrintArray(int[] array)
         {
             if (array is null)
