@@ -6,7 +6,7 @@ namespace ArrayExercises
     {
         static void Main(string[] args)
         {
-            int[] array = { 1, 2, 3, 4 };
+            int[] array = ReadArray();
             PrintArray(array);
         }
 
@@ -35,7 +35,7 @@ namespace ArrayExercises
         static int[] ReadArray()
         {
             // 1) Citesc nr de elemente
-            int nrElemente = ReadNumber("Nr de elemente", 3, 0);
+            int nrElemente = ReadNumber("Nr de elemente=", 3, 0);
 
             int[] array = new int[nrElemente];
 
