@@ -35,8 +35,17 @@ namespace ArrayExercises
         static int[] ReadArray()
         {
             // 1) Citesc nr de elemente
+            int nrElemente = ReadNumber("Nr de elemente", 3, 0);
+
+            int[] array = new int[nrElemente];
 
             // 2) Pentru fiecare pozitie (element) trebuie sa citesc valoarea
+            for (int i = 0; i < nrElemente; i++)
+            {
+                array[i] = ReadNumber($"element[{i}]=", 3, 0);
+            }
+
+            return array;
         }
 
         static int ReadNumber(string label, int maxTries, int defaultValue)
