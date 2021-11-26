@@ -6,6 +6,15 @@ namespace ArrayExercises
     {
         static void Main(string[] args)
         {
+            int[,] matrix = ArrayHelper.ReadMatrix();
+
+            Console.WriteLine("-----------------------");
+
+            ArrayHelper.PrintMatrix(matrix);
+        }
+
+        static void Exercises_With_UnidimensionalArrays()
+        {
             int[] array = ArrayHelper.ReadArray();
             int[] sortedArrayAsc = ArrayHelper.SelectionSort(array, SortDirection.Ascending);
             if (object.ReferenceEquals(array, sortedArrayAsc))
