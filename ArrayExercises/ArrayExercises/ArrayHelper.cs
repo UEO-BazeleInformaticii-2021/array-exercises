@@ -20,36 +20,38 @@ namespace ArrayExercises
             //      NU => interschimbam elementul curent cu elementul urmator
             //            o iau inapoi de la capat
 
+            int[] sortedArray = Clone(array);
+
             bool hasChanges = true;
             do
             {
                 // bucla de repetari
-                for (int i = 0; i < array.Length - 1; i++)
+                for (int i = 0; i < sortedArray.Length - 1; i++)
                 {
                     switch (sort)
                     {
                         case SortDirection.Descending:
-                            hasChanges = array[i] < array[i + 1];
+                            hasChanges = sortedArray[i] < sortedArray[i + 1];
                             break;
 
                         case SortDirection.Ascending:
                         default:
-                            hasChanges = array[i] > array[i + 1];
+                            hasChanges = sortedArray[i] > sortedArray[i + 1];
                             break;
                     }
 
                     if (hasChanges)
                     {
-                        int aux = array[i];
-                        array[i] = array[i + 1];
-                        array[i + 1] = aux;
+                        int aux = sortedArray[i];
+                        sortedArray[i] = sortedArray[i + 1];
+                        sortedArray[i + 1] = aux;
                         break;
                     }
                 }
             }
             while (hasChanges);
 
-            return array;
+            return sortedArray;
         }
 
         public static int[] SelectionSort(int[] array, SortDirection sort)
@@ -62,10 +64,12 @@ namespace ArrayExercises
             // pornesc o iterare incepand de la primul element => capat
             // la fiecare pas, incerc sa aduc pe pozitia curenta minimul din sub-vectorul care ramane pana la capat
 
-            for (int i = 0; i < array.Length - 1; i++) // pozitia curenta pe care aduc minimul
+            int[] sortedArray = Clone(array);
+
+            for (int i = 0; i < sortedArray.Length - 1; i++) // pozitia curenta pe care aduc minimul
             {
 
-                for (int j = i + 1; j < array.Length; j++)
+                for (int j = i + 1; j < sortedArray.Length; j++)
                 // trebuie sa iterez sub-vectorul care incepe de la elementul urmator pozitiei curente
                 // si merge pana la capatul vectorului
                 {
@@ -73,25 +77,25 @@ namespace ArrayExercises
                     switch (sort)
                     {
                         case SortDirection.Descending:
-                            hasChanges = array[i] < array[j];
+                            hasChanges = sortedArray[i] < sortedArray[j];
                             break;
 
                         case SortDirection.Ascending:
                         default:
-                            hasChanges = array[i] > array[j];
+                            hasChanges = sortedArray[i] > sortedArray[j];
                             break;
                     }
 
                     if (hasChanges)
                     {
-                        int aux = array[i];
-                        array[i] = array[j];
-                        array[j] = aux;
+                        int aux = sortedArray[i];
+                        sortedArray[i] = sortedArray[j];
+                        sortedArray[j] = aux;
                     }
                 }
             }
 
-            return array;
+            return sortedArray;
         }
 
         public static int Min(int[] array)
@@ -154,6 +158,22 @@ namespace ArrayExercises
             }
 
             return array;
+        }
+
+        public static int[] Clone(int[] array)
+        {
+            if (array is null)
+            {
+                return new int[0];
+            }
+
+            int[] clone = new int[array.Length];
+            for (int i = 0; i < array.Length; i++)
+            {
+                clone[i] = array[i];
+            }
+
+            return clone;
         }
     }
 }
