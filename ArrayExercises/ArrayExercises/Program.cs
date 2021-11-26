@@ -8,7 +8,7 @@ namespace ArrayExercises
         {
             int[,] matrix = ArrayHelper.ReadMatrix();
 
-            Console.WriteLine("-----------------------");
+            Console.WriteLine("--------------------------");
 
             ArrayHelper.PrintMatrix(matrix);
         }
