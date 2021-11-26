@@ -196,5 +196,24 @@ namespace ArrayExercises
 
             return matrix;
         }
+
+        public static void PrintMatrix(int[,] matrix)
+        {
+            if (matrix is null)
+            {
+                Console.WriteLine("Matrix is null");
+                return;
+            }
+
+            for (int row = 0; row < matrix.GetLength(0); row++)
+            {
+                for (int col = 0; col < matrix.GetLength(1); col++)
+                {
+                    Console.Write($"{matrix[row, col],6}");
+                }
+
+                Console.WriteLine();
+            }
+        }
     }
 }
