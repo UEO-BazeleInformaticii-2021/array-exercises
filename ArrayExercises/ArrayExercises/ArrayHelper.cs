@@ -175,5 +175,26 @@ namespace ArrayExercises
 
             return clone;
         }
+
+        public static int[,] ReadMatrix()
+        {
+            // citesc nr de linii
+            int rowsCount = ConsoleHelper.ReadNumber("Nr de linii=", 3, 0);
+
+            // citesc nr de coloane
+            int colsCount = ConsoleHelper.ReadNumber("Nr de coloane=", 3, 0);
+
+            int[,] matrix = new int[rowsCount, colsCount];
+            for (int row = 0; row < matrix.GetLength(0); row++)
+            {
+                for (int col = 0; col < matrix.GetLength(1); col++)
+                {
+                    int element = ConsoleHelper.ReadNumber($"Element[{row},{col}]=", 3, 0);
+                    matrix[row, col] = element;
+                }
+            }
+
+            return matrix;
+        }
     }
 }
