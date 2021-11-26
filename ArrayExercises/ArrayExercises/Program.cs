@@ -6,11 +6,13 @@ namespace ArrayExercises
     {
         static void Main(string[] args)
         {
-            int[,] matrix = ArrayHelper.ReadMatrix();
+            int[,] matrix1 = ArrayHelper.ReadMatrix();
+            int[,] matrix2 = ArrayHelper.ReadMatrix();
+            int[,] sum = ArrayHelper.Sum(matrix1, matrix2);
 
             Console.WriteLine("--------------------------");
 
-            ArrayHelper.PrintMatrix(matrix);
+            ArrayHelper.PrintMatrix(sum);
         }
 
         static void Exercises_With_UnidimensionalArrays()

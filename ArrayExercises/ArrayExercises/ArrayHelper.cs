@@ -215,5 +215,45 @@ namespace ArrayExercises
                 Console.WriteLine();
             }
         }
+
+        public static int[,] Sum(int[,] matrix1, int[,] matrix2)
+        {
+            if (matrix1 is null)
+            {
+                Console.WriteLine($"{nameof(matrix1)} is null, cannot calculate sum!");
+                return new int[0, 0];
+            }
+
+            if (matrix2 is null)
+            {
+                Console.WriteLine($"{nameof(matrix2)} is null, cannot calculate sum!");
+                return new int[0, 0];
+            }
+
+            // calculate dimensions of matrix1
+            int rowsCount1 = matrix1.GetLength(0);
+            int colsCount1 = matrix1.GetLength(1);
+
+            // calculate dimensions of matrix2
+            int rowsCount2 = matrix2.GetLength(0);
+            int colsCount2 = matrix2.GetLength(1);
+
+            if (rowsCount1 != rowsCount2 || colsCount1 != colsCount2)
+            {
+                Console.WriteLine($"Dimensions of the two matrices are not the same, cannot calculate sum!");
+                return new int[0, 0];
+            }
+
+            int[,] sum = new int[rowsCount1, colsCount1];
+            for (int row = 0; row < rowsCount1; row++)
+            {
+                for (int col = 0; col < colsCount1; col++)
+                {
+                    sum[row, col] = matrix1[row, col] + matrix2[row, col];
+                }
+            }
+
+            return sum;
+        }
     }
 }
