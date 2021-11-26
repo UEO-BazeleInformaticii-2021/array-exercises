@@ -6,13 +6,11 @@ namespace ArrayExercises
     {
         static void Main(string[] args)
         {
-            int[,] matrix1 = ArrayHelper.ReadMatrix();
-            int[,] matrix2 = ArrayHelper.ReadMatrix();
-            int[,] sum = ArrayHelper.Sum(matrix1, matrix2);
+            int[] array1 = new int[] { 1, 2 };
+            int[] array2 = new int[] { 3, 4, 5 };
 
-            Console.WriteLine("--------------------------");
-
-            ArrayHelper.PrintMatrix(sum);
+            int[][] cartesianProduct = ArrayHelper.CartesianProduct(array1, array2);
+            ArrayHelper.PrintJaggedArray(cartesianProduct);
         }
 
         static void Exercises_With_UnidimensionalArrays()
@@ -33,5 +31,17 @@ namespace ArrayExercises
             ArrayHelper.PrintArray(sortedArrayAsc);
             ArrayHelper.PrintArray(sortedArrayDesc);
         }
+
+        static void Exercises_With_Matrices()
+        {
+            int[,] matrix1 = ArrayHelper.ReadMatrix();
+            int[,] matrix2 = ArrayHelper.ReadMatrix();
+            int[,] sum = ArrayHelper.Sum(matrix1, matrix2);
+
+            Console.WriteLine("--------------------------");
+
+            ArrayHelper.PrintMatrix(sum);
+        }
+
     }
 }

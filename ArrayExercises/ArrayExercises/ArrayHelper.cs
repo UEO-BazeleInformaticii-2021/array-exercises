@@ -255,5 +255,61 @@ namespace ArrayExercises
 
             return sum;
         }
+
+        public static int[][] CartesianProduct(int[] array1, int[] array2)
+        {
+            if (array1 is null)
+            {
+                Console.WriteLine($"{nameof(array1)} is null");
+                return new int[0][];
+            }
+
+            if (array2 is null)
+            {
+                Console.WriteLine($"{nameof(array2)} is null");
+                return new int[0][];
+            }
+
+            // A = [1, 2]
+            // B = [2, 3, 4]
+            //      (i=0, j=0)  (i=0 j=1)   (i=0,j=2)    (i=1; j=0)  (i=1;j=1)  (i=1; j=2)
+            // P = [(1, 2),     (1, 3),     (1, 4)       (2, 2)      (2, 3)      (2, 4)]
+            //         0           1           2            3           4           5
+
+            int[][] cartesianProduct = new int[array1.Length * array2.Length][];
+            for (int i = 0, idxCartesian = 0; i < array1.Length; i++)
+            {
+                for (int j = 0; j < array2.Length; j++, idxCartesian++)
+                {
+                    cartesianProduct[idxCartesian] = new int[] { array1[i], array2[j] };
+                }
+            }
+
+            return cartesianProduct;
+        }
+
+        public static void PrintJaggedArray(int[][] array)
+        {
+            if (array is null)
+            {
+                Console.WriteLine("Array is null");
+                return;
+            }
+
+            Console.Write("Array=");
+            for (int i = 0; i < array.Length; i++)
+            {
+                int[] element = array[i];
+                string elementsAsList = string.Join(",", element);
+
+                Console.Write($"({elementsAsList})");
+                if (i < array.Length - 1)
+                {
+                    Console.Write(",");
+                }
+            }
+
+            Console.WriteLine();
+        }
     }
 }
