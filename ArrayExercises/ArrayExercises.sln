@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayExercises", "ArrayExercises\ArrayExercises.csproj", "{86B24E4D-343F-4E34-BCF9-929338B7EA99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArrayExercises", "ArrayExercises\ArrayExercises.csproj", "{86B24E4D-343F-4E34-BCF9-929338B7EA99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayExercises.Tests.NUnit", "ArrayExercises.Tests.NUnit\ArrayExercises.Tests.NUnit.csproj", "{9FC75D02-2989-4E23-B708-4C7E36F00CA0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{86B24E4D-343F-4E34-BCF9-929338B7EA99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86B24E4D-343F-4E34-BCF9-929338B7EA99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86B24E4D-343F-4E34-BCF9-929338B7EA99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FC75D02-2989-4E23-B708-4C7E36F00CA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FC75D02-2989-4E23-B708-4C7E36F00CA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FC75D02-2989-4E23-B708-4C7E36F00CA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FC75D02-2989-4E23-B708-4C7E36F00CA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

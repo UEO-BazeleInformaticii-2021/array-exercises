@@ -5,4 +5,10 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+    <ItemGroup>
+        <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+            <_Parameter1>ArrayExercises.Tests.NUnit</_Parameter1>
+        </AssemblyAttribute>
+    </ItemGroup>
+
 </Project>

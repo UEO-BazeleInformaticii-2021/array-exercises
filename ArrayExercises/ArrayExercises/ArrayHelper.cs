@@ -160,7 +160,7 @@ namespace ArrayExercises
             return array;
         }
 
-        public static int[] Clone(int[] array)
+        internal static int[] Clone(int[] array)
         {
             if (array is null)
             {
